@@ -103,10 +103,10 @@ def plot_free_energy(sample,
     my_cmap = sns.palettes.blend_palette(['#547098', '#FFF8DC', '#d64d67'],
                                          as_cmap=True)
 
-    X, Y, Z = two_dim_free_energy_kde(sample, obs, n, p, bw_method, mlp_fct)
+    X, Y, Z = two_dim_free_energy_kde(sample, eigs, obs, n, p, bw_method,
+                                      mlp_fct)
 
-    plt.figsize(8, 8)
-    fig = plt.figure()
+    fig = plt.figure(figsize=(8, 8))
     ax = fig.gca()
 
     ax.contourf(X, Y, Z - Z.min(), levels=np.linspace(0, 4, 10), rstride=8,
@@ -121,3 +121,5 @@ def plot_free_energy(sample,
     ax.set_yticklabels([])
     ax.set_xticklabels([])
     ax.grid(zorder=0)
+
+    return fig, ax
