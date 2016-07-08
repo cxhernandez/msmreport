@@ -15,8 +15,9 @@ install:
   - conda config --add channels omnia
   - conda install -yq python-coveralls osprey msmbuilder ipython-notebook nbconvert nose
   - python setup.py install
+
 script:
-  -  nosetests -v msmreport --with-timer --with-coverage --cover-package=msmreport
+  -  nosetests -v msmreport --with-coverage --cover-package=msmreport
 
 after_success:
   - coveralls
