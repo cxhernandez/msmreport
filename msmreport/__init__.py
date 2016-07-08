@@ -5,6 +5,9 @@ from jupyter_client.manager import start_new_kernel
 from nbconvert.preprocessors import ExecutePreprocessor
 from nbconvert.exporters.export import exporter_map
 
+__name__ = 'msmreport'
+__version__ = '0.1.0dev0'
+
 
 def execute_nb(nb):
     kernel_name = nb.metadata.get('kernelspec', {}).get('name', 'python')

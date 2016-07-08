@@ -21,8 +21,10 @@ class Timing(object):
         return False
 
 
-def nb_template(yaml):
-    with open(TEMPLATE, 'r') as f:
+def nb_template(yaml, tmp=None):
+    if not tmp:
+        tmp = TEMPLATE
+    with open(tmp, 'r') as f:
         nb = nbformat.read(f, nbformat.NO_CONVERT)
     for i, cell in enumerate(nb['cells']):
         nb['cells'][i]['source'] = cell['source'].format(yaml=yaml)
