@@ -1,0 +1,22 @@
+language: c
+sudo: false
+
+env:
+  matrix:
+    - CONDA_PY=3.4
+    - CONDA_PY=3.5
+
+branches:
+  only:
+    - master
+
+install:
+  - source devtools/travis-ci/install_miniconda.sh
+  - conda config --add channels omnia
+  - conda install -yq python-coveralls osprey msmbuilder ipython-notebook nbconvert
+
+script:
+  -  nosetests -v msmreport --with-timer --with-coverage --cover-package=msmreport
+
+after_success:
+  - coveralls
