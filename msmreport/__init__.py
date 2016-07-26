@@ -1,9 +1,15 @@
 import os
 
-from jupyter_client.manager import start_new_kernel
+try:
+    from jupyter_client.manager import start_new_kernel
+except ImportError:
+    start_new_kernel = None
 
-from nbconvert.preprocessors import ExecutePreprocessor
-from nbconvert.exporters.export import exporter_map
+try:
+    from nbconvert.preprocessors import ExecutePreprocessor
+    from nbconvert.exporters.export import exporter_map
+except ImportError:
+    ExecutePreprocessor = exporter_map = None
 
 __name__ = 'msmreport'
 __version__ = '0.1.0dev0'

@@ -1,0 +1,44 @@
+package:
+  name: msmreport
+  version: "0.1.0dev0"
+
+source:
+  path: ../../
+
+build:
+  entry_points:
+    - msmreport = msmreport.cli.main:main
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - osprey
+    - msmbuilder
+    - ipython-notebook
+    - nbconvert
+    - sqlalchemy
+    - jupyter_client
+
+test:
+  requires:
+    - nose
+    - nose-timer
+
+  imports:
+    - msmreport
+    - msmreport.cli
+
+  commands:
+    - nosetests -v msmreport --with-timer
+
+about:
+  home: https://github.com/msmexplorer/msmreport
+  license: MIT
+  summary: 'Create reports from Osprey MSMs'
+
+# vim: ts=2 sw=2 et
