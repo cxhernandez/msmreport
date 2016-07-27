@@ -23,7 +23,7 @@ def func(args, parser):
 
 def configure_parser(sub_parsers):
     help = 'Generate a report for an MSM made with osprey'
-    p = sub_parsers.add_parser('plot', description=help, help=help,
+    p = sub_parsers.add_parser('create', description=help, help=help,
                                formatter_class=ArgumentDefaultsHelpFormatter)
     p.add_argument('-y', '--yaml', dest='yaml',
                    help='Path to Osprey config file')
