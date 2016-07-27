@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 from distutils.spawn import find_executable
 
-MSMREPORT_BIN = find_executable('osprey')
+MSMREPORT_BIN = find_executable('msmreport')
 
 
 def test_help():

@@ -4,7 +4,7 @@ import sys
 import argparse
 
 from .. import __name__, __version__
-from . import parser_create
+from msmreport.cli import parser_create
 
 
 def main():
@@ -39,7 +39,7 @@ def args_func(args, p):
             message = """\
 An unexpected error has occurred with msmreport (version %s), please
 consider sending the following traceback to the osprey GitHub issue tracker at:
-        https://github.com/cxhernandez/msmreport/issues
+        https://github.com/msmexplorer/msmreport/issues
 """
             print(message % __version__, file=sys.stderr)
         raise  # as if we did not catch it

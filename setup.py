@@ -10,7 +10,7 @@ setup(
     package_data={
         'msmreport': ['assets/*.*', 'assets/templates/*.*']
     },
-    zip_safe=True,
+    zip_safe=False,
     platforms=["Linux", "Unix"],
     author="cxhernandez",
     author_email="cxh@stanford.edu",
