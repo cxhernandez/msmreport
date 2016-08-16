@@ -10,7 +10,7 @@ def func(args, parser):
     from .. import execute_nb, convert_nb
     from ..utils import Timing, nb_template
 
-    yaml, tmp, fmt = parser.yaml, parser.tmp, parser.fmt
+    yaml, tmp, fmt = args.yaml, args.tmp, args.fmt
 
     output = basename(splitext(yaml)[0])
     with Timing('reading osprey config...'):
@@ -33,5 +33,5 @@ def configure_parser(sub_parsers):
     p.add_argument('-f', '--format', dest='fmt',
                    choices=exporter_map.keys(),
                    default='html',
-                   help='Path to Osprey config file')
+                   help='Output file format')
     p.set_defaults(func=func)

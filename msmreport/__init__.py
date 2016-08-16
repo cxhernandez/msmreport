@@ -36,5 +36,5 @@ def execute_nb(nb):
 def convert_nb(nb, output, fmt):
     exporter = exporter_map[fmt]()
     html, _ = exporter.from_notebook_node(nb)
-    with open(output, 'w') as f:
-        f.write(output + '.%s' % fmt)
+    with open(output + '.%s' % fmt, 'w') as f:
+        f.write(html)
