@@ -19,6 +19,7 @@ requirements:
     - python
     - osprey
     - msmbuilder
+    - msmexplorer
     - ipython-notebook
     - nbconvert
     - sqlalchemy

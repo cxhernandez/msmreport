@@ -36,7 +36,7 @@ def convert_keys_to_string(dictionary):
 
     http://stackoverflow.com/questions/1254454/fastest-way-to-convert-a-dicts-keys-values-from-unicode-to-str
     """
-    if isinstance(dictionary, unicode):
+    if isinstance(dictionary, bytes):
         return str(dictionary)
     elif not isinstance(dictionary, dict):
         return dictionary

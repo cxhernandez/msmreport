@@ -4,7 +4,7 @@ import sys
 import argparse
 
 from .. import __name__, __version__
-from msmreport.cli import parser_create
+from . import parser_create
 
 
 def main():
